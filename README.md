@@ -27,9 +27,9 @@ As visible there is a 16MB block preceeding the first partition. As of [Rockchip
 I found the idbloader to be 319 sectors in size on my device. The uboot and trust images are 4MB by speficiation even if the trust image was about 2MB on my device only I decided to do a full 4MB dump. So I could dump it using:
 ```
 INPUT_DEVICE="/dev/mmcblk0"
-dd if="${INPUT_DEVICE}" of="XU10-idbloader.img" seek=64 count=319
-dd if="${INPUT_DEVICE}" of="XU10-uboot.img" seek=16384 count=8192
-dd if="${INPUT_DEVICE}" of="XU10-trust.img" seek=24576 count=8192
+dd if="${INPUT_DEVICE}" of="XU10-idbloader.img" skip=64 count=319
+dd if="${INPUT_DEVICE}" of="XU10-uboot.img" skip=16384 count=8192
+dd if="${INPUT_DEVICE}" of="XU10-trust.img" skip=24576 count=8192
 ```
 
 I am including XU10-dump.sh to automate the process. Make sure to update the INPUT_DEVICE variable with the path to your SD-card (e.g. use /dev/sdX in case of an external USB cardreader).
