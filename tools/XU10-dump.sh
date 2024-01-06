@@ -20,10 +20,10 @@ fi
 # -> 4MB trust.img: block 32768, Byte 0xc00000 (12582912) to 0x1000000 (16777216) = 4194304 Bytes (4MB)
 
 echo "Dumping IDB loader."
-dd if="${INPUT_DEVICE}" of="XU10-idbloader.img" seek=64 count=319
+dd if="${INPUT_DEVICE}" of="XU10-idbloader.img" skip=64 count=319
 
 echo "Dumping U-Boot."
-dd if="${INPUT_DEVICE}" of="XU10-uboot.img" seek=16384 count=8192
+dd if="${INPUT_DEVICE}" of="XU10-uboot.img" skip=16384 count=8192
 
 echo "Dumping Trust."
-dd if="${INPUT_DEVICE}" of="XU10-trust.img" seek=24576 count=8192
+dd if="${INPUT_DEVICE}" of="XU10-trust.img" skip=24576 count=8192
