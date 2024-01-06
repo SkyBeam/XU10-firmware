@@ -35,7 +35,7 @@ dd if="${INPUT_DEVICE}" of="XU10-trust.img" seek=24576 count=8192
 I am including XU10-dump.sh to automate the process. Make sure to update the INPUT_DEVICE variable with the path to your SD-card (e.g. use /dev/sdX in case of an external USB cardreader).
 
 
-# Backup yuor SD-card
+# Backup your SD-card
 You can simply create a copy of the contents of partition 1 (MAGICX) as well as partition 3 (GAMES) using Windows file explorer.
 For partition 2 you need a Linux system or ext filesystem driver for Windows or any clone utility which can dump ext file systems. I used clonezilla to create a partition dump.
 
